@@ -245,22 +245,42 @@
                         <span id="exerciseProgress">0/3 sets</span>
                     </div>
                 </div>
-
+		
                 <div class="active-exercises" id="activeExercises">
                     <!-- Active exercises will be added here -->
                 </div>
 
-                <div class="workout-controls">
-                    <button class="btn btn-secondary" id="pauseWorkoutBtn">
-                        <i class="fas fa-pause"></i> Pause
-                    </button>
-                    <button class="btn btn-primary" id="nextSetBtn">
-                        <i class="fas fa-forward"></i> Next Set
-                    </button>
-                    <button class="btn btn-danger" id="finishWorkoutBtn">
-                        <i class="fas fa-flag-checkered"></i> Finish
-                    </button>
-                </div>
+               <!-- Active Workout View - Update workout controls section -->
+<div class="workout-controls">
+    <button class="btn btn-danger" id="cancelWorkoutBtn">
+        <i class="fas fa-times"></i> Cancel
+    </button>
+    <button class="btn btn-secondary" id="pauseWorkoutBtn">
+        <i class="fas fa-pause"></i> Pause
+    </button>
+    <button class="btn btn-primary" id="nextSetBtn">
+        <i class="fas fa-forward"></i> Next Set
+    </button>
+    <button class="btn btn-success" id="finishWorkoutBtn">
+        <i class="fas fa-flag-checkered"></i> Finish
+    </button>
+</div>
+
+<!-- Add confirmation modal for cancel -->
+<div class="modal" id="cancelConfirmModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Cancel Workout?</h3>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to cancel this workout? All progress will be lost.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="keepWorkoutBtn">Keep Working Out</button>
+                <button class="btn btn-danger" id="confirmCancelBtn">Yes, Cancel Workout</button>
+            </div>
+        </div>
+    </div>
+</div>
 
                 <div class="rest-timer-container" id="restTimerContainer">
                     <div class="rest-timer">
@@ -462,5 +482,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script type="module" src="workout-data.js"></script>
 	<script type="module" src="app.js"></script>
+<div class="modal" id="cancelConfirmModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Cancel Workout?</h3>
+        </div>
+        <div class="modal-body">
+            <p>Are you sure you want to cancel this workout? All progress will be lost.</p>
+            <div class="modal-actions">
+                <button class="btn btn-secondary" id="keepWorkoutBtn">Keep Working Out</button>
+                <button class="btn btn-danger" id="confirmCancelBtn">Yes, Cancel Workout</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>

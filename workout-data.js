@@ -176,7 +176,7 @@ const exerciseLibrary = {
     ]
 };
 
-// Sample Workout Templates
+// Sample Workout Templates (Fixed with proper sets arrays)
 const workoutTemplates = [
     {
         id: 'full-body-1',
@@ -187,36 +187,45 @@ const workoutTemplates = [
                 id: 'squat',
                 name: 'Squat',
                 type: 'reps',
-                sets: 3,
-                targetReps: 10,
-                targetWeight: 60
+                sets: [
+                    { setNumber: 1, targetReps: 10, targetWeight: 60, completed: false },
+                    { setNumber: 2, targetReps: 10, targetWeight: 60, completed: false },
+                    { setNumber: 3, targetReps: 10, targetWeight: 60, completed: false }
+                ]
             },
             {
                 id: 'bench-press',
                 name: 'Bench Press',
                 type: 'reps',
-                sets: 3,
-                targetReps: 10,
-                targetWeight: 50
+                sets: [
+                    { setNumber: 1, targetReps: 10, targetWeight: 50, completed: false },
+                    { setNumber: 2, targetReps: 10, targetWeight: 50, completed: false },
+                    { setNumber: 3, targetReps: 10, targetWeight: 50, completed: false }
+                ]
             },
             {
                 id: 'pull-up',
                 name: 'Pull Up',
                 type: 'reps',
-                sets: 3,
-                targetReps: 8,
-                targetWeight: 0
+                sets: [
+                    { setNumber: 1, targetReps: 8, targetWeight: 0, completed: false },
+                    { setNumber: 2, targetReps: 8, targetWeight: 0, completed: false },
+                    { setNumber: 3, targetReps: 8, targetWeight: 0, completed: false }
+                ]
             },
             {
                 id: 'shoulder-press',
                 name: 'Shoulder Press',
                 type: 'reps',
-                sets: 3,
-                targetReps: 10,
-                targetWeight: 20
+                sets: [
+                    { setNumber: 1, targetReps: 10, targetWeight: 20, completed: false },
+                    { setNumber: 2, targetReps: 10, targetWeight: 20, completed: false },
+                    { setNumber: 3, targetReps: 10, targetWeight: 20, completed: false }
+                ]
             }
         ],
-        restTime: 60
+        restTime: 60,
+        createdAt: new Date().toISOString()
     },
     {
         id: 'push-day',
@@ -227,36 +236,46 @@ const workoutTemplates = [
                 id: 'bench-press',
                 name: 'Bench Press',
                 type: 'reps',
-                sets: 4,
-                targetReps: 8,
-                targetWeight: 70
+                sets: [
+                    { setNumber: 1, targetReps: 8, targetWeight: 70, completed: false },
+                    { setNumber: 2, targetReps: 8, targetWeight: 70, completed: false },
+                    { setNumber: 3, targetReps: 8, targetWeight: 70, completed: false },
+                    { setNumber: 4, targetReps: 8, targetWeight: 70, completed: false }
+                ]
             },
             {
                 id: 'shoulder-press',
                 name: 'Shoulder Press',
                 type: 'reps',
-                sets: 3,
-                targetReps: 10,
-                targetWeight: 25
+                sets: [
+                    { setNumber: 1, targetReps: 10, targetWeight: 25, completed: false },
+                    { setNumber: 2, targetReps: 10, targetWeight: 25, completed: false },
+                    { setNumber: 3, targetReps: 10, targetWeight: 25, completed: false }
+                ]
             },
             {
                 id: 'tricep-extension',
                 name: 'Tricep Extension',
                 type: 'reps',
-                sets: 3,
-                targetReps: 12,
-                targetWeight: 15
+                sets: [
+                    { setNumber: 1, targetReps: 12, targetWeight: 15, completed: false },
+                    { setNumber: 2, targetReps: 12, targetWeight: 15, completed: false },
+                    { setNumber: 3, targetReps: 12, targetWeight: 15, completed: false }
+                ]
             },
             {
                 id: 'chest-fly',
                 name: 'Chest Fly',
                 type: 'reps',
-                sets: 3,
-                targetReps: 12,
-                targetWeight: 15
+                sets: [
+                    { setNumber: 1, targetReps: 12, targetWeight: 15, completed: false },
+                    { setNumber: 2, targetReps: 12, targetWeight: 15, completed: false },
+                    { setNumber: 3, targetReps: 12, targetWeight: 15, completed: false }
+                ]
             }
         ],
-        restTime: 90
+        restTime: 90,
+        createdAt: new Date().toISOString()
     },
     {
         id: 'cardio-session',
@@ -267,18 +286,23 @@ const workoutTemplates = [
                 id: 'running',
                 name: 'Running',
                 type: 'time',
-                sets: 1,
-                targetTime: 1800 // 30 minutes in seconds
+                sets: [
+                    { setNumber: 1, targetTime: 1800, completed: false }
+                ]
             },
             {
                 id: 'rowing',
                 name: 'Rowing',
                 type: 'distance',
-                sets: 3,
-                targetDistance: 500 // meters
+                sets: [
+                    { setNumber: 1, targetDistance: 500, completed: false },
+                    { setNumber: 2, targetDistance: 500, completed: false },
+                    { setNumber: 3, targetDistance: 500, completed: false }
+                ]
             }
         ],
-        restTime: 30
+        restTime: 30,
+        createdAt: new Date().toISOString()
     },
     {
         id: 'hiit-workout',
@@ -289,25 +313,38 @@ const workoutTemplates = [
                 id: 'burpees',
                 name: 'Burpees',
                 type: 'reps',
-                sets: 4,
-                targetReps: 15
+                sets: [
+                    { setNumber: 1, targetReps: 15, completed: false },
+                    { setNumber: 2, targetReps: 15, completed: false },
+                    { setNumber: 3, targetReps: 15, completed: false },
+                    { setNumber: 4, targetReps: 15, completed: false }
+                ]
             },
             {
                 id: 'mountain-climbers',
                 name: 'Mountain Climbers',
                 type: 'time',
-                sets: 4,
-                targetTime: 45
+                sets: [
+                    { setNumber: 1, targetTime: 45, completed: false },
+                    { setNumber: 2, targetTime: 45, completed: false },
+                    { setNumber: 3, targetTime: 45, completed: false },
+                    { setNumber: 4, targetTime: 45, completed: false }
+                ]
             },
             {
                 id: 'jump-rope',
                 name: 'Jump Rope',
                 type: 'time',
-                sets: 4,
-                targetTime: 60
+                sets: [
+                    { setNumber: 1, targetTime: 60, completed: false },
+                    { setNumber: 2, targetTime: 60, completed: false },
+                    { setNumber: 3, targetTime: 60, completed: false },
+                    { setNumber: 4, targetTime: 60, completed: false }
+                ]
             }
         ],
-        restTime: 20
+        restTime: 20,
+        createdAt: new Date().toISOString()
     }
 ];
 
@@ -384,19 +421,23 @@ function calculateWorkoutStats(workoutLog) {
     let totalDistance = 0;
     let totalTime = 0;
     
-    workoutLog.exercises.forEach(exercise => {
-        exercise.sets.forEach(set => {
-            totalSets++;
-            if (exercise.type === 'reps' || exercise.type === 'weight') {
-                totalReps += set.actualReps || set.targetReps;
-                totalWeight += set.actualWeight || set.targetWeight || 0;
-            } else if (exercise.type === 'distance') {
-                totalDistance += set.actualDistance || set.targetDistance;
-            } else if (exercise.type === 'time') {
-                totalTime += set.actualTime || set.targetTime;
+    if (workoutLog && workoutLog.exercises) {
+        workoutLog.exercises.forEach(exercise => {
+            if (exercise.sets && Array.isArray(exercise.sets)) {
+                exercise.sets.forEach(set => {
+                    totalSets++;
+                    if (exercise.type === 'reps' || exercise.type === 'weight') {
+                        totalReps += set.actualReps || set.targetReps || 0;
+                        totalWeight += set.actualWeight || set.targetWeight || 0;
+                    } else if (exercise.type === 'distance') {
+                        totalDistance += set.actualDistance || set.targetDistance || 0;
+                    } else if (exercise.type === 'time') {
+                        totalTime += set.actualTime || set.targetTime || 0;
+                    }
+                });
             }
         });
-    });
+    }
     
     return {
         totalSets,
@@ -409,6 +450,7 @@ function calculateWorkoutStats(workoutLog) {
 
 // Format time (seconds to MM:SS)
 function formatTime(seconds) {
+    if (!seconds && seconds !== 0) return '00:00';
     const mins = Math.floor(seconds / 60);
     const secs = seconds % 60;
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
@@ -416,19 +458,24 @@ function formatTime(seconds) {
 
 // Format date
 function formatDate(dateString) {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', {
-        weekday: 'short',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit'
-    });
+    if (!dateString) return 'Unknown date';
+    try {
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+            weekday: 'short',
+            month: 'short',
+            day: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        });
+    } catch (error) {
+        return dateString;
+    }
 }
 
 // Calculate streak
 function calculateStreak(workoutLogs) {
-    if (!workoutLogs.length) return 0;
+    if (!workoutLogs || !workoutLogs.length) return 0;
     
     const today = new Date();
     today.setHours(0, 0, 0, 0);
@@ -476,6 +523,7 @@ function calculateStreak(workoutLogs) {
     return streak;
 }
 
+// Export all functions
 export {
     getAllExercises,
     getExercisesByCategory,
